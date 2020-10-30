@@ -13,6 +13,12 @@
 	<!-- css -->
 	<link href="<?= base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
 	<link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
+
+	<!-- js -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
+	<script src="<?= base_url('assets/js/script.js') ?>"></script>
+	
 	<?php  
 		$url = $_SERVER['REQUEST_URI']; 
 		//print_r($url);

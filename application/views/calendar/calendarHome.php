@@ -1,7 +1,7 @@
 <h2><?php echo "Calendar"; ?></h2>
 <table border="1px">
 	
-	<tr><th>Events</th><th>Description</th><th>Datetime</th><th>Section</th><th>Starttime</th><th>Endtime</th></tr>
+	<tr><th>id</th><th>Events</th><th>Description</th><th>Datetime</th><th>Section</th><th>Starttime</th><th>Endtime</th></tr>
 <?php 
 	$variable = '';
 	//$section = 1;
@@ -34,19 +34,20 @@ Section:
 <?php 
 
 	$sectionvariable = '';
+  $totalsection=0;
 	
 	foreach ($section as $section_item): 
+    $id = $section_item['id'] ;
+    $section = $section_item['section'] ;
 
+    $sectionvariable .= "{     id: ".$id.",    name: '".$section."' },";
+    $totalsection++ ;
 ?> 
 
 	<tr>
-		<td><?php echo $section = $calendar_cat['section']; ?></td>
+		<td><?php echo $section = $section_item['section']; ?></td>
 	</tr>
 <?php 
-$variable .= "{ id: ".$increment.", name: '<div>".$event."</div><div>".$description."</div>',
-                start: moment('".$newDate."','MM-DD-YYYY').add('hours', '".$starttime."'),
-                end: moment('".$newDate."','MM-DD-YYYY').add('hours', '".$endtime."'), sectionID: ".$section.",classes: 'item-status-none'
-              },";
 endforeach; 
 ?>
 </table>
@@ -275,7 +276,7 @@ endforeach;
 <div id="popupContact">
 <!-- Contact Us Form -->
       <form action="#" id="form" method="post" name="form">
-      <img id="close" src="<?= base_url('assets/close.png') ?>" onclick ="div_hide()">
+      <img id="close" src="<?= base_url('assets/css/images/close.png') ?>" onclick ="div_hide()">
       <h2>Calendar</h2>
       <hr>
       <input id="event" name="event"  type="text"> <p></p>
@@ -330,7 +331,7 @@ endforeach;
 <div id="popupContact1">
 <!-- Contact Us Form -->
 <form action="#" id="form1" method="post" name="form">
-<img id="close" src="close.png" onclick ="div_hide1()">
+<img id="close" src="<?= base_url('assets/css/images/close.png') ?>" onclick ="div_hide1()">
 <h2>Calendar</h2>
 <hr>
 
@@ -379,7 +380,7 @@ endforeach;
 <div id="popupContact2">
 <!-- Contact Us Form -->
 <form action="#" id="form2" method="post" name="form">
-<img id="close" src="close.png" onclick ="sectionpopuphide()">
+<img id="close" src="<?= base_url('assets/css/images/close.png') ?>" onclick ="sectionpopuphide()">
 <h2>Calendar Section</h2>
 <hr>
 <input id="sectionname" name="sectionname"  type="text" placeholder="Section Name">
@@ -401,7 +402,7 @@ endforeach;
 <!-- Contact Us Form -->
 
 <form action="#" id="form3" method="post" name="form">
-   <img id="close" src="close.png" onclick ="sectionpopuphide2()">
+   <img id="close" src="<?= base_url('assets/css/images/close.png') ?>" onclick ="sectionpopuphide2()">
    <h2>Scheduale</h2>
    <hr>
    <div id="listpop"> &nbsp; </div>
