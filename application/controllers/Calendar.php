@@ -22,5 +22,31 @@
 		}
 
 
+		public function addCalendarEvent()
+		{
+			// create the data object
+			$data = new stdClass();
+
+			// load form helper and validation library
+			$this->load->helper('form');
+			$this->load->library('form_validation');
+
+			echo $this->input->post("date1");//getting single data
+        	print_r($this->input->post());exit;//This one is not working.
+			// set validation rules
+			//$this->form_validation->set_rules('')
+			/*
+			  $event = trim($_REQUEST['eventdata']);
+			  $description = trim($_REQUEST['eventdesc']);
+			  $description ;
+			  $section = $_REQUEST['section'] ;
+			  $date = $_REQUEST['date'] ;
+			  $newDate = date("Y-m-d", strtotime($date));
+			  $starttime = $_REQUEST['starttime'] ;
+			  $endtime =  $_REQUEST['endtime'] ;
+			 */
+		}
+
+
 	}
 ?>
